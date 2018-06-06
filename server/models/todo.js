@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 var Todo =  mongoose.model('Todo',{
-    'name': {
+    'text': {
         type: String,
         trim: true,
     },
@@ -11,6 +11,10 @@ var Todo =  mongoose.model('Todo',{
     }, 
     'completeAt': {
         type: Number
+    },
+    '_creator': {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     }
 })
 
